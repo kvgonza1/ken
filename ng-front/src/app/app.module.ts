@@ -7,12 +7,14 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import { FooterComponent } from './navigation/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PostCreateComponent } from './post/post-create/post-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,
