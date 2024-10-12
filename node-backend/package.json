@@ -1,6 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "node proj",
   "type": "module",
   "main": "server.js",
   "scripts": {
@@ -8,7 +9,14 @@
     "start": "node server.js",
     "start-watch": "nodemon server.js"
   },
-  "author": "",
+  "author": "harrison bueno",
   "license": "ISC",
-  "description": "",
-  "dependen
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.7.1"
+  }
+}
