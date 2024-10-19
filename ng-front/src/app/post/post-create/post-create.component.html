@@ -1,8 +1,5 @@
-<!--two way binding-->
 <mat-card>
-
   <form (submit)="onAddPost(postForm)" #postForm="ngForm">
-
     <mat-form-field>
 
       <input matInput type="text" name="title" placeholder="Enter Title" ngModel required minlength="3"
