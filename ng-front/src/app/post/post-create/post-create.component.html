@@ -1,15 +1,18 @@
 <mat-card>
   <form (submit)="onAddPost(postForm)" #postForm="ngForm">
-    <mat-form-field>
 
-      <input matInput type="text" name="title" placeholder="Enter Title" ngModel required minlength="3"
+    <mat-form-field>
+      <input matInput type="text" name="title" placeholder="Enter Title"
+             [ngModel]="post.title"
+             required minlength="3"
              #title="ngModel">
       <mat-error *ngIf="title.invalid">Title is a required field</mat-error>
-
     </mat-form-field>
-    <mat-form-field>
 
-      <textarea matInput rows="4" name="content" placeholder="Enter Content" ngModel required minlength="5"
+    <mat-form-field>
+      <textarea matInput rows="4" name="content" placeholder="Enter Content"
+                [ngModel]="post.content"
+                required minlength="5"
                 #content="ngModel"></textarea>
 
       <mat-error *ngIf="content.invalid">Content is a required field</mat-error>
@@ -18,5 +21,4 @@
     <button mat-raised-button color="primary" type="submit">Submit</button>
 
   </form>
-
 </mat-card>

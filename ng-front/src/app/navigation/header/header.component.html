@@ -1,23 +1,21 @@
-<mat-toolbar color="primary">
-  <span>
-  <a> My App </a>
-  </span>
-  <span class=" spacer "> </span>
+<mat-toolbar color="primary" >
+  <span routerLink="/"><a>My App</a></span>
+  <span class="spacer"></span>
   <ul>
     <li>
-      <a mat-button> Posts </a>
+      <a mat-button>Posts</a>
     </li>
-    <li>
-      <a mat-button> New Post </a>
+    <li >
+      <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>
     </li>
-    <li>
-      <a mat-button> Login </a>
+    <li >
+      <a mat-button>Login</a>
     </li>
-    <li>
-      <a mat-button> Signup </a>
+    <li >
+      <a mat-button>Signup</a>
     </li>
-    <li>
-      <button mat-button> Logout</button>
+    <li >
+      <button mat-button>Logout</button>
     </li>
   </ul>
 </mat-toolbar>

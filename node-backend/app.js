@@ -2,6 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from "mongoose";
 
+import postRoutes from './routes/post.js';
+
 import Post from './model/post.js'
 
 mongoose.connect(process.env.MongoDB)
@@ -26,43 +28,12 @@ app.use((req, res, next) => {
     );
     res.setHeader(
         'Access-Control-Allow-Methods',
-        'GET, POST, PATCH, DELETE, OPTIONS'
+        'GET, POST, PATCH, PUT, DELETE, OPTIONS'
     );
     next();
 });
 
-app.post('/api/posts', (req, res, next) => {
-    const post = new Post({
-        title: req.body.title,
-        content: req.body.content
-    });
+app.use('/api/posts', postRoutes);
 
-    post.save().then(result => {
-        console.log(result);
-        res.status(201).json(
-            {
-                success: true,
-                postId: result._id
-            }
-        );
-    });
-});
-
-app.get('/api/posts', (req, res, next) => {
-    Post.find()
-        .then(data => {
-            res.status(200).json({
-                success: true,
-                data: data
-            });
-        });
-});
-
-app.delete('/api/posts/:id', (req, res, next) => {
-    Post.deleteOne({_id: req.params.id}).then(result => {
-        console.log(result);
-        res.status(200).json({success: true});
-    });
-});
 
 export default app;
