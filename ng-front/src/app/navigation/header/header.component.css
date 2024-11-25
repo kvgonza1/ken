@@ -19,3 +19,8 @@ ul {
   display: flex ;
   list-style: none ;
 }
+
+.active {
+    font-weight: bold;
+    color: coral !important;
+}
