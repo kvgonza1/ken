@@ -19,8 +19,7 @@ export class PostService {
   }
 
   getPost() {
-    // return this.posts;  //by reference
-    // return [...this.posts];  //copy of the list of post
+
     this.http.get<{ success: boolean, data: any }>('http://localhost:3000/api/posts')
       .pipe(map(postData => {
         return postData.data.map((payLoad: any) => {
