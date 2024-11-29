@@ -10,6 +10,7 @@ export class AuthService {
   private isAuthenticated: boolean = false;
   private authStatusListener = new Subject<boolean>();
   private token: string | null = null;
+  // @ts-ignore
   private tokenTimer: ReturnType<typeof setTimeout> = 0;
   constructor(private http: HttpClient, private router: Router) {
   }
